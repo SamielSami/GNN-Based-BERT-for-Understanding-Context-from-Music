@@ -1,0 +1,26 @@
+seed: 42
+device: auto
+data:
+  sample_rate: 22050
+  segment_seconds: 1.0
+  n_mels: 128
+  similarity_threshold: 0.85
+  max_text_length: 128
+  num_labels: 10
+model:
+  text_model: distilbert-base-uncased
+  freeze_text_encoder: false
+  audio_feature_dim: 311
+  hidden_dim: 256
+  gnn_layers: 2
+  dropout: 0.2
+  fusion: cross_attention
+training:
+  model: fusion
+  batch_size: 4
+  epochs: 15
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  num_workers: 0
+  emotion_loss_weight: 0.1
+  checkpoint_dir: results/checkpoints
