@@ -1,0 +1,26 @@
+{
+  "source": "Existing independent MusicCaps AudioSet positive targets; display names match src/task1/audioset_names.json",
+  "mapping_policy": "Explicit genre/style subset of the existing target vocabulary. Mood uses only the explicitly annotated Angry music target. Genre is never converted into mood, and captions are not used to manufacture labels.",
+  "multilabel_policy": "Overview: one selected annotation gets its named color; multiple selected annotations get a separate overlap color; zero selected annotations means no selected annotation, not a confirmed negative. Per-label genre panels retain every overlapping positive.",
+  "genre": {
+    "/m/02lkt": "Electronic music",
+    "/m/06by7": "Rock music",
+    "/m/064t9": "Pop music",
+    "/m/0155w": "Blues",
+    "/m/01lyv": "Country",
+    "/m/0glt670": "Hip hop music",
+    "/m/02v2lh": "New-age music",
+    "/m/02x8m": "Funk",
+    "/m/02p0sh1": "Traditional music",
+    "/m/05rwpb": "Independent music"
+  },
+  "mood": {
+    "/t/dd00036": "Angry music"
+  },
+  "limitations": [
+    "The chosen genre group includes music styles; it is an explicit analysis mapping, not a newly annotated genre taxonomy.",
+    "Only Angry music is an explicit mood target in the selected vocabulary. This view cannot establish broader mood separation.",
+    "Missing positive annotations must not be interpreted as confirmed absence of a genre or mood.",
+    "t-SNE is a descriptive projection and does not establish causal explanations or generalization."
+  ]
+}
