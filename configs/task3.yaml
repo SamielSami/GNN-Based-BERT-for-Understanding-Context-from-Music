@@ -1,0 +1,21 @@
+# Joint Task 3 training. The ordered label vocabulary is read from the manifests.
+# config.yaml/config1 are legacy generic-runner settings; they are not used here.
+processed_manifest: data/processed/task2_available/manifest.json
+source_manifest: data/splits/task2_available.json
+text_checkpoint: results/task1/audioset_cpu_20260907/best_model.pt
+graph_checkpoint: results/task2/available_run1/runs/seed42/gnn_temporal/best_model.pt
+head_run: results/task3/available_run1/seed42
+# Preserve the interrupted joint_run1 directory. Each new run needs a fresh path.
+output_dir: results/task3/joint_run2
+modes: [bert, gnn, concat, gated, cross_attention]
+epochs: 3
+batch_size: 8
+hidden_dim: 64
+unfreeze_layers: 1
+text_lr: 0.00001
+graph_lr: 0.0001
+head_lr: 0.0001
+patience: 2
+seed: 42
+device: cpu
+cpu_threads: 6
